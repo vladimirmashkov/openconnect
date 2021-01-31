@@ -2,8 +2,11 @@
 yum -y update && yum -y upgrade
 yum install -y epel-release
 yum -y update && yum -y upgrade
-yum -y install iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph ocserv gnutls-utils
+yum -y install iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph 
+yum -y install ocserv gnutls-utils
 yum -y update && yum -y upgrade
+
+wget https://download.configserver.com/csf.tgz -P /opt
 
 systemctl disable firewalld
 systemctl stop firewalld
