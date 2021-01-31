@@ -11,4 +11,5 @@ cd /opt/csf/
 sh install.sh 
 cd $cur_dir
 
+sed -i 's/ICMP_IN = "1"/ICMP_IN = "0"/g' /etc/csf/csf.conf
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-yum -y update && yum -y upgrade
 yum install -y epel-release
 yum -y update && yum -y upgrade
 yum -y install iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph 
