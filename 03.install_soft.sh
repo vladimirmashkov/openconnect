@@ -6,5 +6,15 @@ systemctl start ip6tables
 systemctl enable iptables
 systemctl enable ip6tables
 
-mkdir -p -m 0777 /opt/csf1
-tar -xzf /opt/csf.tgz -C /opt/csf1
+tar -xzf /opt/csf.tgz -C /opt
+sh /opt/csf/install.sh
+rm -rf /opt/csf
+rm -rf /opt/csf.tgz 
+
+yes | cp -rf etc/csfpre.sh /etc/csf/csfpre.sh
+
+yes | cp -rf etc/sysctl.conf /etc/sysctl.conf
+
+chmod 0644 /etc/csf/csfpre.sh
+chmod 0644 /etc/sysctl.conf
+
