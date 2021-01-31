@@ -1,5 +1,5 @@
 # openconnect
 
-yum install -y git
-git clone https://github.com/vladimirmashkov/openconnect.git
-cd openconnect/
+yum install -y git <br/>
+git clone https://github.com/vladimirmashkov/openconnect.git <br/>
+cd openconnect/ <br/>
