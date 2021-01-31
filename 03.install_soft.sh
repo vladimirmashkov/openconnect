@@ -6,10 +6,10 @@ systemctl start ip6tables
 systemctl enable iptables
 systemctl enable ip6tables
 
-tar -xzf /opt/csf.tgz -C /opt
-sh /opt/csf/install.sh
-rm -rf /opt/csf
-rm -rf /opt/csf.tgz 
+tar -xzf /opt/csf.tgz -C /opt &
+sh /opt/csf/install.sh &
+rm -rf /opt/csf &
+rm -rf /opt/csf.tgz &
 
 yes | cp -rf etc/csfpre.sh /etc/csf/csfpre.sh
 
