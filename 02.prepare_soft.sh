@@ -8,7 +8,7 @@ yum -y update && yum -y upgrade
 
 wget https://download.configserver.com/csf.tgz -P /opt
 
-tar -xzf /opt/csf.tgz -C /opt 
+tar -xvzf /opt/csf.tgz -C /opt 
 
 systemctl disable firewalld
 systemctl stop firewalld
