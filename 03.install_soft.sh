@@ -6,8 +6,10 @@ systemctl start ip6tables
 systemctl enable iptables
 systemctl enable ip6tables
 
-
-sh /opt/csf/install.sh 
+cur_dir=$(pwd)
+cd /opt/csf/
+sh install.sh 
+cd $cur_dir
 
 
 
