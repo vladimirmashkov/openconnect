@@ -1,5 +1,5 @@
 # openconnect
-sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config
+sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config <br/>
 reboot <br/>
 
 yum install -y git <br/>

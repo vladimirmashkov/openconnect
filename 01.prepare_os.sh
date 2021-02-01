@@ -6,8 +6,8 @@ sudo ntpdate -s time.nist.gov
 sudo cp -f "etc/resolv.conf" "/etc/resolv.conf"
 
 mkdir -p -m 0644 /root/.ssh/
-wget https://github.com/vladimirmashkov.keys -P /root/.ssh/ -O "mashkov_key.pub"
-cat /root/.ssh/mashkov_key.pub >> /home/albert/.ssh/authorized_keys
+wget https://github.com/vladimirmashkov.keys -O "/root/.ssh/mashkov_key.pub"
+cat /root/.ssh/mashkov_key.pub >> /root/.ssh/authorized_keys
 
 sudo groupadd vpn_admin
 sudo useradd -m albert -G vpn_admin
