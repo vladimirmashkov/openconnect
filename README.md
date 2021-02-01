@@ -8,7 +8,7 @@ cd openconnect/ <br/>
 
 git checkout origin/dev/centos7_ssl_admin <br/>
 
-domain_name=www0.music-tm.com <br/>
+export domain_name=www0.music-tm.com <br/>
 sh 01.prepare_os.sh <br/>
 sh 02.prepare_soft.sh <br/>
 sh 03.install_soft.sh <br/>
