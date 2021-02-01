@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-01T09:48:51.154Z" agent="5.0 (Windows)" etag="Th3GV5g81-eaPCOtbKvD" version="14.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-01T11:12:35.254Z" agent="5.0 (Windows)" etag="fGxNlTtDMIeR3E-GadIk" version="14.2.9" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -25,6 +25,9 @@
         <mxCell id="vtNa0MsMpTA_hVX7_8ig-18" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=0;sketch=0;glass=0;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-21">
           <mxGeometry width="140" height="280" as="geometry" />
         </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-27" value="Proxy node server" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;dashed=1;sketch=0;fontStyle=5" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-21">
+          <mxGeometry x="15" y="10" width="110" height="20" as="geometry" />
+        </mxCell>
         <mxCell id="vtNa0MsMpTA_hVX7_8ig-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="vtNa0MsMpTA_hVX7_8ig-1" target="vtNa0MsMpTA_hVX7_8ig-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -43,14 +46,16 @@
         <mxCell id="vtNa0MsMpTA_hVX7_8ig-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="vtNa0MsMpTA_hVX7_8ig-4" target="vtNa0MsMpTA_hVX7_8ig-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="vtNa0MsMpTA_hVX7_8ig-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="vtNa0MsMpTA_hVX7_8ig-4" target="vtNa0MsMpTA_hVX7_8ig-5">
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="vtNa0MsMpTA_hVX7_8ig-4" target="vtNa0MsMpTA_hVX7_8ig-31">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-33" value="&lt;div&gt;only approved ip&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vtNa0MsMpTA_hVX7_8ig-16">
+          <mxGeometry x="-0.0714" y="-30" relative="1" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="vtNa0MsMpTA_hVX7_8ig-4" value="https proxy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="220" y="230" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="vtNa0MsMpTA_hVX7_8ig-5" value="&lt;div&gt;VPN server&lt;/div&gt;&lt;div&gt;https&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="450" y="370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="vtNa0MsMpTA_hVX7_8ig-10" value="&lt;div&gt;https&lt;/div&gt;&lt;div&gt;content server&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="450" y="120" width="120" height="60" as="geometry" />
@@ -60,6 +65,56 @@
         </mxCell>
         <mxCell id="vtNa0MsMpTA_hVX7_8ig-14" value="web traffic redirect by link" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="370" y="230" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-46" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="vtNa0MsMpTA_hVX7_8ig-34" target="vtNa0MsMpTA_hVX7_8ig-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-34" value="&lt;div&gt;Administrator&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;rounded=0;shadow=0;glass=0;sketch=0;gradientColor=#ffffff;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="80" y="585" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-36" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="200" y="560" width="153" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-37" value="" style="group" vertex="1" connectable="0" parent="vtNa0MsMpTA_hVX7_8ig-36">
+          <mxGeometry width="153" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-38" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=0;sketch=0;glass=0;fillColor=#d5e8d4;gradientColor=#ffffff;gradientDirection=west;strokeColor=none;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-37">
+          <mxGeometry y="10" width="153" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-39" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=0;sketch=0;glass=0;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-37">
+          <mxGeometry x="3" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-41" value="&lt;div&gt;https&lt;/div&gt;&lt;div&gt;admin server&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-37">
+          <mxGeometry x="13" y="25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-40" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="430" y="380" width="153" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-28" value="" style="group" vertex="1" connectable="0" parent="vtNa0MsMpTA_hVX7_8ig-40">
+          <mxGeometry width="153" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-29" value="" style="group" vertex="1" connectable="0" parent="vtNa0MsMpTA_hVX7_8ig-28">
+          <mxGeometry width="153" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-30" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=0;sketch=0;glass=0;fillColor=#d5e8d4;gradientColor=#ffffff;gradientDirection=west;strokeColor=none;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-29">
+          <mxGeometry y="10" width="153" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-31" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=0;sketch=0;glass=0;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-29">
+          <mxGeometry x="3" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-5" value="&lt;div&gt;VPN server&lt;/div&gt;&lt;div&gt;https&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="vtNa0MsMpTA_hVX7_8ig-40">
+          <mxGeometry x="13" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="vtNa0MsMpTA_hVX7_8ig-38" target="vtNa0MsMpTA_hVX7_8ig-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="270" as="sourcePoint" />
+            <mxPoint x="533" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vtNa0MsMpTA_hVX7_8ig-48" value="&lt;div&gt;only approved ip&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vtNa0MsMpTA_hVX7_8ig-47">
+          <mxGeometry x="-0.0714" y="-30" relative="1" as="geometry">
+            <mxPoint x="-32" y="-45" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
