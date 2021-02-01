@@ -16,3 +16,9 @@ sed -i 's/TESTING = "1"/TESTING = "0"/g' /etc/csf/csf.conf
 sed -i 's/TESTING_INTERVAL = "5"/TESTING_INTERVAL = "0"/g' /etc/csf/csf.conf
 
 
+systemctl enable --now snapd.socket
+systemctl start nginx
+systemctl enable nginx
+
+certbot certonly --nginx
+

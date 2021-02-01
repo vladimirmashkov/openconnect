@@ -23,3 +23,4 @@ chown albert:albert /home/albert/.ssh/ -R
 sed -i "s/PasswordAuthentication yes/#PasswordAuthentication yes/g" /etc/ssh/sshd_config
 cat etc/sshd_config >> /etc/ssh/sshd_config
 sudo systemctl restart sshd
+

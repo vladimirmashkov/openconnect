@@ -16,6 +16,8 @@ yes | cp -rf etc/client-key.pem /etc/ocserv/ssl/client-key.pem
 
 yes | cp -rf etc/ocserv.conf /etc/ocserv/ocserv.conf
 
+sed -i "s/<domain_name>/${domain_name}/g" /etc/ocserv/ocserv.conf
+
 touch /etc/ocserv/passwd
 
 chmod 0644 /etc/csf/csfpre.sh
