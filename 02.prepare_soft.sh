@@ -24,7 +24,8 @@ yes | cp -rf etc/vpn-host.conf /etc/nginx/conf.d/vpn-host.conf
 sed -i "s/<domain_name>/${domain_name}/g" /etc/nginx/conf.d/vpn-host.conf
 
 ln -s /var/lib/snapd/snap /snap
-snap install core; sudo snap refresh core
+snap install core; snap refresh core
+yum -y update && yum -y upgrade
 snap install --classic certbot
-ln -s /snap/bin/certbot /usr/bin/certbot
+
 
