@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   nginx:
     image: centos/nginx-112-centos7
@@ -6,3 +7,5 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - /root/openconnect/data/nginx:/etc/nginx/conf.d
