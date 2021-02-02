@@ -1,9 +1,11 @@
-test-nginx:
+test_nginx:
   image: nginx
   volumes:
-    - ./templates:/etc/nginx/templates
+    - ./nginx/conf.d:/etc/nginx/conf.d
+    - ./nginx/www:/var/www
   ports:
     - "80:80"
+    - "443:443"
   environment:
     - NGINX_HOST=www0.music-tm.com
     - NGINX_PORT=80
