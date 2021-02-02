@@ -5,7 +5,7 @@ yum install -y --enablerepo=epel ntp ntpdate wget mc p7zip-full whois net-tools 
 ntpdate -s time.nist.gov
 cp -f "etc/resolv.conf" "/etc/resolv.conf"
 
-
+chmod +x init-letsencrypt.sh
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum install -y docker-ce docker-ce-cli containerd.io
