@@ -15,8 +15,6 @@ sed -i 's/ICMP_IN = "1"/ICMP_IN = "0"/g' /etc/csf/csf.conf
 sed -i 's/TESTING = "1"/TESTING = "0"/g' /etc/csf/csf.conf
 sed -i 's/TESTING_INTERVAL = "5"/TESTING_INTERVAL = "0"/g' /etc/csf/csf.conf
 
-ln -s /snap/bin/certbot /usr/bin/certbot
-
 systemctl enable --now snapd.socket
 systemctl start nginx
 systemctl enable nginx

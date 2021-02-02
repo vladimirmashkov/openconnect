@@ -19,13 +19,13 @@ sed -i "s/<global_ip>/${global_ip}/g" etc/csfpre.sh
 
 
 mkdir -p -m 0644 /var/www/${domain_name}/html
+chmod -R 0777 /var/www
 yes | cp -rf etc/vpn-host.conf /etc/nginx/conf.d/vpn-host.conf
 
 sed -i "s/<domain_name>/${domain_name}/g" /etc/nginx/conf.d/vpn-host.conf
 
 ln -s /var/lib/snapd/snap /snap
 snap install core; snap refresh core
-yum -y update && yum -y upgrade
 snap install --classic certbot
-
+ln -s /snap/bin/certbot /usr/bin/certbot
 
