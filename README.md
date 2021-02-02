@@ -16,4 +16,6 @@ export domain_name=www0.music-tm.com
 ```bash
 sh 01.prepare_os.sh
 
+./init-letsencrypt.sh
+
 ```
