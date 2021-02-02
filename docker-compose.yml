@@ -1,9 +1,9 @@
-weber:
+test-nginx:
   image: nginx
   volumes:
     - ./templates:/etc/nginx/templates
   ports:
-    - "8080:80"
+    - "80:80"
   environment:
-    - NGINX_HOST=foobar.com
+    - NGINX_HOST=www0.music-tm.com
     - NGINX_PORT=80

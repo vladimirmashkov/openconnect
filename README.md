@@ -17,3 +17,8 @@ export domain_name=www0.music-tm.com
 ```bash
 sh 01.prepare_os.sh
 ```
+
+_shell helper_
+```bash
+git fetch && git stash && git pull
+```
