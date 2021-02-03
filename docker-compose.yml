@@ -13,10 +13,6 @@ services:
       - NGINX_HOST=www0.music-tm.com
       - NGINX_PORT=80
       - NGINX_PORT_SSL=443
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./nginx/www/vpn-host/ssl:/etc/letsencrypt
-      - ./nginx/www/vpn-host/ssl:/var/lib/letsencrypt
+
 
   
