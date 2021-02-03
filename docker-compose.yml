@@ -16,7 +16,7 @@ services:
   certbot:
     image: certbot/certbot
     volumes:
-      - /var/www/vpn-host/ssl:/etc/letsencrypt
-      - /var/www/vpn-host/ssl:/var/lib/letsencrypt
+      - ./nginx/www/vpn-host/ssl:/etc/letsencrypt
+      - ./nginx/www/vpn-host/ssl:/var/lib/letsencrypt
 
   
