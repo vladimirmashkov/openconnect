@@ -12,13 +12,16 @@ git checkout origin/dev/nginx
 git checkout dev/nginx
 ```
 ```bash
-export domain_name=www0.music-tm.com
+echo "export vpn_domain_name=www0.music-tm.com" > vpn_domain_name.sh
 ```
 ```bash
 sh 01.prepare_os.sh
+sh 02.prepare_scripts.sh
 ```
 
 _shell helper_
 ```bash
 git fetch && git stash && git pull
+
+sh test.sh
 ```
