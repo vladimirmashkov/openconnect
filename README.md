@@ -16,6 +16,7 @@ echo "export vpn_domain_name=www0.music-tm.com" > vpn_domain_name.sh
 ```
 ```bash
 sh 01.prepare_os.sh
+reboot
 sh 02.prepare_scripts.sh
 ```
 
