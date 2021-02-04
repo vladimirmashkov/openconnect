@@ -2,6 +2,9 @@
 yum update -y && yum upgrade -y
 yum install -y epel-release
 timedatectl set-timezone Europe/Moscow
+yum install -y --enablerepo=epel ntp ntpdate wget mc whois net-tools traceroute mtr sed
+ntpdate -s time.nist.gov
+
 echo "========== Install 7zip =========="
 wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86_64/Packages/p/p7zip-16.02-10.el7.x86_64.rpm
 wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86_64/Packages/p/p7zip-plugins-16.02-10.el7.x86_64.rpm
@@ -10,9 +13,6 @@ rpm -U --quiet p7zip-plugins-16.02-10.el7.x86_64.rpm
 
 rm -f p7zip-16.02-10.el7.x86_64.rpm
 rm -f p7zip-plugins-16.02-10.el7.x86_64.rpm
-
-yum install -y --enablerepo=epel ntp ntpdate wget mc whois net-tools traceroute mtr sed
-ntpdate -s time.nist.gov
 
 cp -f "etc/resolv.conf" "/etc/resolv.conf"
 echo "========== Install Docker =========="
