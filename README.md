@@ -13,7 +13,7 @@ reboot
 yum install -y git
 git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
-git checkout origin/dev/nginx
+git checkout origin/dev/nginx_auto
 git checkout dev/nginx
 ```
 ```bash
