@@ -17,6 +17,10 @@ git checkout origin/dev/nginx
 git checkout dev/nginx
 ```
 ```bash
+sh main.sh
+```
+_or_
+```bash
 sh 01.prepare_os.sh
 sh 02.prepare_scripts.sh
 sh 03.prepare_soft.sh
