@@ -7,4 +7,5 @@ docker run --name ocserv --privileged \
 
 docker run --name ocserv --privileged \
     -p "443:443" \
+    -v "/root/openconnect/ocserv2:/etc/ocserv" \
     -d tommylau/ocserv
