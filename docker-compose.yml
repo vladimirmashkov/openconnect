@@ -17,7 +17,7 @@ services:
     restart: always
     container_name: ocserv
     privileged: true
-    hostname: www.example.com
+    hostname: <vpn_domain_name>
     volumes:
       - "./ocserv:/etc/ocserv"
     ports:
