@@ -10,3 +10,8 @@ docker run -it --rm --name certbot \
     --cert-name <vpn_domain_name> -d <vpn_domain_name> 
 
 # https://certbot.eff.org/docs/using.html
+
+cat /root/openconnect/nginx/www/vpn-host/ssl/live/www0.music-tm.com/cert.pem > /root/openconnect/ocserv/certs/cert.pem
+cat /root/openconnect/nginx/www/vpn-host/ssl/live/www0.music-tm.com/chain.pem > /root/openconnect/ocserv/certs/chain.pem
+cat /root/openconnect/nginx/www/vpn-host/ssl/live/www0.music-tm.com/fullchain.pem > /root/openconnect/ocserv/certs/fullchain.pem
+cat /root/openconnect/nginx/www/vpn-host/ssl/live/www0.music-tm.com/privkey.pem > /root/openconnect/ocserv/certs/privkey.pem

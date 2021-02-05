@@ -37,6 +37,3 @@ no | cp -fr $(pwd)/openconnect/* $(pwd)
 rm -fr openconnect
 
 yum update -y && yum upgrade -y
-echo "========== update environment =========="
-chmod +x vpn_domain_name.sh
-cp vpn_domain_name.sh /etc/profile.d/

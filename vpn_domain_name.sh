@@ -1,1 +1,0 @@
-export vpn_domain_name=www0.music-tm.com
