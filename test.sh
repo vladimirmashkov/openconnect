@@ -11,3 +11,7 @@ docker run -it --rm --name certbot \
 
 cd ~
 7za a -t7z -mx5 vpn-host_ssl_20210203.7z  openconnect/nginx/www/vpn-host/ssl
+
+
+
+
