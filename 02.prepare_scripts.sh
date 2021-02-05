@@ -4,8 +4,7 @@ declare -a arr=(
     "cert_renew.sh"
     "docker-compose.yml"
     "test.sh"
-
-    "nginx/conf.d/vpn-host.conf"
+    "./nginx/conf.d/vpn-host.conf"
     )
 for i in "${arr[@]}"
 do
