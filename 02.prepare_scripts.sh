@@ -14,10 +14,9 @@ do
    sed -i "s/<vpn_domain_name>/${vpn_domain_name}/g" $i
 done
 
-w_d=$(pwd)
-sed -i "s/<w_d>/${w_d}/g" docker-compose-ocserv.service
-cat docker-compose-ocserv.service > /etc/systemd/system/docker-compose-ocserv.service
-# rm -f docker-compose-ocserv.service
+printf  "# /etc/systemd/system/docker-compose-ocserv.service \n[Unit] \nDescription=Docker Compose Application Service Nginx + Ocserv (OpenConnect) \nRequires=docker.service \nAfter=docker.service \n
+[Service]\nType=oneshot\nRemainAfterExit=yes\nWorkingDirectory=$(pwd)\nExecStart=/usr/local/bin/docker-compose up -d\nExecStop=/usr/local/bin/docker-compose down\nTimeoutStartSec=20 \n
+[Install] \nWantedBy=multi-user.target\n" > /etc/systemd/system/docker-compose-ocserv.service
 
 echo "* * 5,25 * * $(pwd)/cert_renew.sh" > crontab.txt
 echo "@reboot (sleep 30s ; cd /root/openconnect ; /usr/local/bin/docker-compose up -d )&" >> crontab.txt
