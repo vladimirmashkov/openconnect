@@ -34,7 +34,7 @@ _shell helper_
 git fetch && git stash && git pull
 
 # ocpasswd -c /etc/ocserv/passwd -g default my_login_name 
-docker exec -it openconnect_ocserv_1 ocpasswd -c /etc/ocserv/passwd -g default my_login_name
+docker exec -it ocserv ocpasswd -c /etc/ocserv/passwd -g default my_login_name
 
 sh test.sh
 ```
