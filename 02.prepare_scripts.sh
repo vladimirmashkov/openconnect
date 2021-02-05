@@ -14,8 +14,8 @@ do
    sed -i "s/<vpn_domain_name>/${vpn_domain_name}/g" $i
 done
 
-WorkingDirectory=$(pwd)
-sed -i "s/<WorkingDirectory>/${WorkingDirectory}/g" docker-compose-ocserv.service
+w_d=$(pwd)
+sed -i "s/<w_d>/${w_d}/g" docker-compose-ocserv.service
 cat docker-compose-ocserv.service > /etc/systemd/system/docker-compose-ocserv.service
 # rm -f docker-compose-ocserv.service
 
