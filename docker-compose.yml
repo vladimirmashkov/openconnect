@@ -9,7 +9,7 @@ services:
       - ./nginx/www:/var/www
     ports:
       - "80:80"
-      - "443:443"
+      # - "443:443"
     environment:
       - NGINX_HOST=<vpn_domain_name>
       - NGINX_PORT=80
@@ -25,5 +25,5 @@ services:
     volumes:
       - "./ocserv:/etc/ocserv"
     ports:
-      - "4443:4443/udp"
-      - "4443:4443"  
+      - "443:4443/udp"
+      - "443:4443"  
