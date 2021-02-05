@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   nginx:
     image: nginx
@@ -15,12 +14,12 @@ services:
       - NGINX_PORT_SSL=443
   ocserv:
     image: tommylau/ocserv
+    restart: always
+    container_name: ocserv
+    privileged: true
+    hostname: www.example.com
     volumes:
       - "./ocserv:/etc/ocserv"
     ports:
-      - "4443:4443"
-    command: 
-      ["--privileged"]
-
-
-  
+      - "4443:4443/udp"
+      - "4443:4443"  
