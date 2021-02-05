@@ -2,6 +2,7 @@ version: '3.8'
 services:
   nginx:
     image: nginx
+    restart: always
     container_name: nginx
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
@@ -24,5 +25,5 @@ services:
     volumes:
       - "./ocserv:/etc/ocserv"
     ports:
-      - "4443:4443/udp"
-      - "4443:4443"  
+      - "4443:443/udp"
+      - "4443:443"  
