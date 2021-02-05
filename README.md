@@ -28,7 +28,9 @@ sh 04.install_soft.sh
 sh 05.cp_and_clean-up.sh
 sh 06.start_soft.sh
 ```
-
+```bash
+reboot
+```
 _shell helper_
 ```bash
 git fetch && git stash && git pull
