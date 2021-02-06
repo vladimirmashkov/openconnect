@@ -1,2 +1,4 @@
 #!/bin/bash
-docker exec -it ocserv 
+echo "========== user list start =========="
+docker exec -it ocserv ocpasswd -c /etc/ocserv/passwd -g default -u $1
+echo "========== user list end ============"

@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it ocserv 
+docker exec -it ocserv ocpasswd -c /etc/ocserv/passwd -g default -l $1
