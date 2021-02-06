@@ -13,6 +13,8 @@ touch ./ocserv/passwd
 chmod 0644 /etc/csf/csfpre.sh
 chmod 0644 /etc/sysctl.conf
 chmod 0644 ./ocserv/passwd
+chmod 0644 cert_renew.sh
+chmod 0644 cert_get_new.sh
 
 
 cat /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/cert.pem > /root/openconnect/ocserv/certs/cert.pem

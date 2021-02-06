@@ -45,6 +45,7 @@ chmod 600 /root/.ssh/authorized_keys
 
 groupadd vpn_admin
 useradd -m albert -G vpn_admin
+usermod -aG docker albert
 mkdir -p -m 0644 /home/albert/.ssh/
 chmod 700 /home/albert/.ssh/
 touch /home/albert/.ssh/authorized_keys
