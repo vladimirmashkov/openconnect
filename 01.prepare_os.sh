@@ -28,14 +28,14 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 systemctl start docker
 systemctl enable docker
 
-echo "========== download old certificates =========="
-wget http://mashkov.com/wp-content/uploads/2021/02/vpn-host_ssl_20210203.7z
-7z x vpn-host_ssl_20210203.7z
-chmod -R 0644 openconnect/
+# echo "========== download old certificates =========="
+# wget http://mashkov.com/wp-content/uploads/2021/02/vpn-host_ssl_20210203.7z
+# 7z x vpn-host_ssl_20210203.7z
+# chmod -R 0644 openconnect/
 
-no | cp -fr $(pwd)/openconnect/* $(pwd)
+# no | cp -fr $(pwd)/openconnect/* $(pwd)
 
-rm -fr openconnect
+# rm -fr openconnect
 
 echo "========== Install public keys =========="
 mkdir -p -m 0644 /root/.ssh/
