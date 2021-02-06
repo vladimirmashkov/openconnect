@@ -15,10 +15,3 @@ chmod 0644 /etc/sysctl.conf
 chmod 0644 ./ocserv/passwd
 chmod 0644 cert_renew.sh
 chmod 0644 cert_get_new.sh
-
-
-cat /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/cert.pem > /root/openconnect/ocserv/certs/cert.pem
-cat /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/chain.pem > /root/openconnect/ocserv/certs/chain.pem
-cat /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/fullchain.pem > /root/openconnect/ocserv/certs/fullchain.pem
-cat /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/privkey.pem > /root/openconnect/ocserv/certs/privkey.pem
-
