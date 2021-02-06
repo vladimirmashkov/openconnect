@@ -2,7 +2,7 @@
 
 ```bash
 sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config
-path_vpn_domain_name = /etc/profile.d/vpn_domain_name.sh
+path_vpn_domain_name=/etc/profile.d/vpn_domain_name.sh
 echo "export vpn_domain_name=www0.music-tm.com" > $path_vpn_domain_name
 echo "export PATH="/var/openconnect_admin:$PATH"" >> $path_vpn_domain_name
 ```
