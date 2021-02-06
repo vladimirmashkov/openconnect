@@ -22,6 +22,6 @@ echo "* * 5,25 * * $(pwd)/cert_renew.sh" > crontab.txt
 crontab < crontab.txt
 
 mkdir -p -m 0644 /var/openconnect_admin
-cp openconnect_admin/* /var/openconnect_admin/*
+cp openconnect_admin/* /var/openconnect_admin/
 chmod +x -R /var/openconnect_admin
 export PATH="/var/openconnect_admin:$PATH"
