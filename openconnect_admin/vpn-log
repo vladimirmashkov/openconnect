@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /var/openconnect_admin/vpn_log.txt

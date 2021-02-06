@@ -1,4 +1,4 @@
 #!/bin/bash
 docker exec -it ocserv ocpasswd -c /etc/ocserv/passwd -g default -u $1
 
-date '+%Y-%m-%d %H:%M:%S% %:z   vpn-unlock: '$1 >> vpn_log.txt
+date '+%Y-%m-%d %H:%M:%S% %:z   vpn-unlock: '$1 >> /var/openconnect_admin/vpn_log.txt
