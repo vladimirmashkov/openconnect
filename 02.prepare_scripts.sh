@@ -24,5 +24,6 @@ crontab < crontab.txt
 mkdir -p -m 0644 /var/openconnect_admin
 cp openconnect_admin/* /var/openconnect_admin/
 chmod +x -R /var/openconnect_admin
+touch /var/openconnect_admin/vpn_log.txt
 chmod 0666 /var/openconnect_admin/vpn_log.txt
 export PATH="/var/openconnect_admin:$PATH"
