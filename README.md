@@ -29,6 +29,9 @@ sh 05.cp_and_clean-up.sh
 sh 06.start_soft.sh
 ```
 ```bash
+reboot
+```
+```bash
 sh cert_get_new.sh
 ```
 ```bash
