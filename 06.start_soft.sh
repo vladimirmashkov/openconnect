@@ -8,7 +8,7 @@ systemctl start docker
 
 systemctl enable docker-compose-ocserv
 systemctl start docker-compose-ocserv
-sh cert_get_new.sh
+
 
 echo "========== To show a status =========="
 systemctl status iptables
