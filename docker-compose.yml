@@ -25,5 +25,5 @@ services:
     volumes:
       - "./ocserv:/etc/ocserv"
     ports:
-      - "443:4443/udp"
-      - "443:4443"  
+      - "443:443/udp"
+      - "443:443"  
