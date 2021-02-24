@@ -9,6 +9,7 @@ systemctl start docker
 systemctl enable docker-compose-ocserv
 systemctl start docker-compose-ocserv
 
+docker-compose up -d
 
 echo "========== To show a status =========="
 systemctl status iptables
