@@ -44,7 +44,7 @@ cat /root/.ssh/mashkov_key.pub > /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/authorized_keys
 
 groupadd vpn_admin
-useradd -m vmashkov -G vpn_admin
+useradd -m vmashkov -G vpn_admin sudo
 usermod -aG docker vmashkov
 usermod -aG root vmashkov
 mkdir -p -m 0644 /home/vmashkov/.ssh/
@@ -54,6 +54,10 @@ cat /root/.ssh/authorized_keys > /home/vmashkov/.ssh/authorized_keys
 chmod 600 /home/vmashkov/.ssh/authorized_keys
 chown vmashkov:vmashkov /home/vmashkov/.ssh/ -R
 echo "vmashkov" | passwd vmashkov --stdin
+
+chmod +w /etc/sudoers
+echo "vmashkov    ALL=(ALL)       ALL" >> /etc/sudoers
+chmod -w /etc/sudoers
 
 useradd -m albert -G vpn_admin
 usermod -aG docker albert
