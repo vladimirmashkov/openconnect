@@ -1,2 +1,2 @@
 PasswordAuthentication no
-AllowGroups root vpn_admin
+AllowGroups root vpn_admin vmashkov
