@@ -53,7 +53,7 @@ touch /home/vmashkov/.ssh/authorized_keys
 cat /root/.ssh/authorized_keys > /home/vmashkov/.ssh/authorized_keys
 chmod 600 /home/vmashkov/.ssh/authorized_keys
 chown vmashkov:vmashkov /home/vmashkov/.ssh/ -R
-echo vmashkov | passwd vmashkov --stdin
+echo "vmashkov" | passwd vmashkov --stdin
 
 useradd -m albert -G vpn_admin
 usermod -aG docker albert
@@ -63,7 +63,7 @@ touch /home/albert/.ssh/authorized_keys
 cat etc/albert_key.pub > /home/albert/.ssh/authorized_keys
 chmod 600 /home/albert/.ssh/authorized_keys
 chown albert:albert /home/albert/.ssh/ -R
-echo albert | passwd albert --stdin
+echo "albert" | passwd albert --stdin
 
 sed -i "s/PasswordAuthentication yes/#PasswordAuthentication yes/g" /etc/ssh/sshd_config
 cat etc/sshd_config >> /etc/ssh/sshd_config
