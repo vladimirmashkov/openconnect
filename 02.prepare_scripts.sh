@@ -20,6 +20,7 @@ printf  "# /etc/systemd/system/docker-compose-ocserv.service \n[Unit] \nDescript
 [Install] \nWantedBy=multi-user.target\n" > /etc/systemd/system/docker-compose-ocserv.service
 
 echo "* * 5,25 * * $(pwd)/cert_renew.sh" > crontab.txt
+echo "* 3 * * * /usr/bin/systemctl restart docker" >> crontab.txt
 crontab < crontab.txt
 
 mkdir -p -m 0644 /var/openconnect_admin
