@@ -15,9 +15,9 @@ git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
 git checkout origin/dev/nginx_t3
 git checkout dev/nginx_t3
-```
-```bash
+
 sh main.sh
+echo
 ```
 _or_
 ```bash
