@@ -15,8 +15,20 @@ services:
       - NGINX_PORT=80
       - NGINX_PORT_SSL=443
     links:
+      - ocserv_t1
       - ocserv_t2
       - ocserv_t3
+  ocserv_t1:
+    image: tommylau/ocserv
+    restart: always
+    container_name: ocserv_t1
+    privileged: true
+    hostname: <vpn_domain_name>
+    volumes:
+      - "./ocserv_t1:/etc/ocserv"
+    ports:
+      - "593:593/udp"
+      - "593:593"  
   ocserv_t2:
     image: tommylau/ocserv
     restart: always
