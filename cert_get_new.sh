@@ -11,10 +11,10 @@ docker run -it --rm --name certbot \
 
 # https://certbot.eff.org/docs/using.html
 
-yes | cp /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/cert.pem  /root/openconnect/ocserv/certs/cert.pem
+yes | cp /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/cert.pem  /root/openconnect/ocserv_t1/certs/cert.pem
 
-yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/chain.pem  /root/openconnect/ocserv/certs/chain.pem
+yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/chain.pem  /root/openconnect/ocserv_t1/certs/chain.pem
 
-yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/fullchain.pem  /root/openconnect/ocserv/certs/fullchain.pem
+yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/fullchain.pem  /root/openconnect/ocserv_t1/certs/fullchain.pem
 
-yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/privkey.pem  /root/openconnect/ocserv/certs/privkey.pem
+yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/privkey.pem  /root/openconnect/ocserv_t1/certs/privkey.pem

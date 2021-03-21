@@ -14,10 +14,10 @@ do
    sed -i "s/<vpn_domain_name>/${vpn_domain_name}/g" $i
 done
 
-touch /etc/systemd/system/docker-compose-ocserv.service
-printf  "# /etc/systemd/system/docker-compose-ocserv.service \n[Unit] \nDescription=Docker Compose Application Service Nginx + Ocserv (OpenConnect) \nRequires=docker.service \nAfter=docker.service \n
-[Service]\nType=oneshot\nRemainAfterExit=yes\nWorkingDirectory=$(pwd)\nExecStart=/usr/local/bin/docker-compose up -d\nExecStop=/usr/local/bin/docker-compose down\nTimeoutStartSec=20 \n
-[Install] \nWantedBy=multi-user.target\n" > /etc/systemd/system/docker-compose-ocserv.service
+# touch /etc/systemd/system/docker-compose-ocserv.service
+# printf  "# /etc/systemd/system/docker-compose-ocserv.service \n[Unit] \nDescription=Docker Compose Application Service Nginx + Ocserv (OpenConnect) \nRequires=docker.service \nAfter=docker.service \n
+# [Service]\nType=oneshot\nRemainAfterExit=yes\nWorkingDirectory=$(pwd)\nExecStart=/usr/local/bin/docker-compose up -d\nExecStop=/usr/local/bin/docker-compose down\nTimeoutStartSec=20 \n
+# [Install] \nWantedBy=multi-user.target\n" > /etc/systemd/system/docker-compose-ocserv.service
 
 echo "* * 5,25 * * $(pwd)/cert_renew.sh" > crontab.txt
 echo "* 3 * * * /usr/bin/systemctl restart docker" >> crontab.txt

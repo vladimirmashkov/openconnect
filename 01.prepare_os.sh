@@ -1,9 +1,9 @@
 #!/bin/bash
 yum update -y && yum upgrade -y
-yum install -y epel-release
+yum install -y epel-release &&
 timedatectl set-timezone Europe/Moscow
 yum install -y --enablerepo=epel ntp ntpdate wget mc whois net-tools traceroute mtr sed
-yum -y install --enablerepo=epel iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph 
+yum -y install --enablerepo=epel iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph
 ntpdate -s time.nist.gov
 
 echo "========== Install 7zip =========="
