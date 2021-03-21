@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "========== user list start =========="
-docker exec -it ocserv cat /etc/ocserv/passwd | grep ':' | cut -d ":" -f1
+docker exec -it ocserv_$1 cat /etc/ocserv/passwd | grep ':' | cut -d ":" -f1
 echo "========== user list end ============"

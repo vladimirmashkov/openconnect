@@ -37,6 +37,11 @@ systemctl enable docker
 
 # rm -fr openconnect
 
+wget -c https://mashkov.com/soft/anyconnect-macos-4.9.06037-predeploy-k9.7z -P nginx/www/vpn-host/www/soft/ && \
+wget -c https://mashkov.com/soft/anyconnect-linux64-4.9.06037-webdeploy-k9.7z -P nginx/www/vpn-host/www/soft/ && \
+wget -c https://mashkov.com/soft/anyconnect-win-4.9.06037-core-vpn-predeploy-k9.7z  -P nginx/www/vpn-host/www/soft/ 
+
+
 echo "========== Install public keys =========="
 mkdir -p -m 0644 /root/.ssh/
 wget https://github.com/vladimirmashkov.keys -O "/root/.ssh/mashkov_key.pub"
