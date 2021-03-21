@@ -17,6 +17,7 @@ git checkout origin/dev/nginx_t3
 git checkout dev/nginx_t3
 
 sh main.sh
+sh cert_get_new.sh
 echo
 ```
 _or_
@@ -29,7 +30,7 @@ sh 05.cp_and_clean-up.sh
 sh 06.start_soft.sh
 ```
 ```bash
-reboot
+systemctl restart docker
 ```
 ```bash
 sh cert_get_new.sh
