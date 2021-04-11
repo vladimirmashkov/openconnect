@@ -44,9 +44,15 @@ cat /root/.ssh/mashkov_key.pub > /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/authorized_keys
 
 groupadd vpn_admin
-useradd -m vmashkov -G vpn_admin
-usermod -aG docker vmashkov
+
+chmod 0640 /etc/sudoers 
+echo "%wheel  ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
+chmod 0440 /etc/sudoers 
+useradd -m vmashkov -G wheel 
+usermod -aG wheel vmashkov 
 usermod -aG root vmashkov
+usermod -aG docker vmashkov 
+usermod -aG vpn_admin vmashkov
 mkdir -p -m 0644 /home/vmashkov/.ssh/
 chmod 700 /home/vmashkov/.ssh/
 touch /home/vmashkov/.ssh/authorized_keys
@@ -54,10 +60,6 @@ cat /root/.ssh/authorized_keys > /home/vmashkov/.ssh/authorized_keys
 chmod 600 /home/vmashkov/.ssh/authorized_keys
 chown vmashkov:vmashkov /home/vmashkov/.ssh/ -R
 echo "vmashkov" | passwd vmashkov --stdin
-
-chmod +w /etc/sudoers
-echo "vmashkov    ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
-chmod -w /etc/sudoers
 
 useradd -m albert -G vpn_admin
 usermod -aG docker albert
