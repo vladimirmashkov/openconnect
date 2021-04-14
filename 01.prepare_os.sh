@@ -1,10 +1,12 @@
 #!/bin/bash
 yum update -y && yum upgrade -y
-yum install -y epel-release
+yum install -y epel-release && \
 timedatectl set-timezone Europe/Moscow
 yum install -y --enablerepo=epel ntp ntpdate wget mc whois net-tools traceroute mtr sed
-yum -y install --enablerepo=epel iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph 
+yum -y install --enablerepo=epel iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph
 ntpdate -s time.nist.gov
+
+chmod 0777 cert*.sh
 
 echo "========== Install 7zip =========="
 wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86_64/Packages/p/p7zip-16.02-10.el7.x86_64.rpm
@@ -36,6 +38,11 @@ systemctl enable docker
 # no | cp -fr $(pwd)/openconnect/* $(pwd)
 
 # rm -fr openconnect
+
+wget -c https://mashkov.com/soft/anyconnect-macos-4.9.06037-predeploy-k9.7z -P nginx/www/vpn-host/www/soft/ && \
+wget -c https://mashkov.com/soft/anyconnect-linux64-4.9.06037-webdeploy-k9.7z -P nginx/www/vpn-host/www/soft/ && \
+wget -c https://mashkov.com/soft/anyconnect-win-4.9.06037-core-vpn-predeploy-k9.7z  -P nginx/www/vpn-host/www/soft/ 
+
 
 echo "========== Install public keys =========="
 mkdir -p -m 0644 /root/.ssh/
