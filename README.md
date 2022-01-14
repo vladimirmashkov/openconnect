@@ -3,7 +3,7 @@
 ```bash
 sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config
 path_vpn_domain_name=/etc/profile.d/vpn_domain_name.sh
-echo "export vpn_domain_name=www0.music-tm.com" > $path_vpn_domain_name
+echo "export vpn_domain_name=n.music-tm-1.net" > $path_vpn_domain_name
 echo "export PATH="/var/openconnect_admin:$PATH"" >> $path_vpn_domain_name
 reboot
 echo
@@ -12,8 +12,8 @@ echo
 yum install -y git
 git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
-git checkout origin/dev/nginx_auto
-git checkout dev/nginx_auto
+git checkout origin/dev/aws
+git checkout dev/aws
 sh main.sh
 sh cert_get_new.sh
 echo

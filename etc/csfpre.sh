@@ -1,9 +1,9 @@
 #!/bin/bash
 iptables -A INPUT -p icmp -j DROP
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
-iptables -A FORWARD -s 192.168.1.0/24 -j ACCEPT
+iptables -A FORWARD -s 172.31.0.0/16 -j ACCEPT
 iptables -A FORWARD -j REJECT
-iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eno16777736 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 172.31.0.0/16 -o eno16777736 -j MASQUERADE
 iptables -t nat -A POSTROUTING -j SNAT --to-source <global_ip>
 echo "1" > /proc/sys/net/ipv4/icmp_echo_ignore_all
 echo "1" > /proc/sys/net/ipv4/ip_forward
