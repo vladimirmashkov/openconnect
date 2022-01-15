@@ -12,8 +12,8 @@ echo
 yum install -y git
 git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
-git checkout origin/dev/aws
-git checkout dev/aws
+git checkout origin/dev/debian/main
+git checkout dev/debian/main
 sh main.sh
 sh cert_get_new.sh
 echo

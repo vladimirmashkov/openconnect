@@ -1,25 +1,24 @@
 #!/bin/bash
-yum update -y && yum upgrade -y
-yum install -y epel-release && \
+sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config
+apt upgrade -y && apt update -y 
 timedatectl set-timezone Europe/Moscow
-yum install -y --enablerepo=epel ntp ntpdate wget mc whois net-tools traceroute mtr sed
-yum -y install --enablerepo=epel iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph
+apt install -y \
+    ntp ntpdate \
+    wget mc whois \
+    net-tools traceroute mtr sed \
+    p7zip-full perl unzip net-tools python3 pip \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+#apt install -y iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph
+cat "etc/resolv.conf" > "/etc/resolv.conf"
 ntpdate -s time.nist.gov
 
-echo "========== Install 7zip =========="
-#wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86_64/Packages/p/p7zip-16.02-10.el7.x86_64.rpm
-#wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86_64/Packages/p/p7zip-plugins-16.02-10.el7.x86_64.rpm
-#rpm -U --quiet p7zip-16.02-10.el7.x86_64.rpm
-#rpm -U --quiet p7zip-plugins-16.02-10.el7.x86_64.rpm
-
-#rm -f p7zip-16.02-10.el7.x86_64.rpm
-#rm -f p7zip-plugins-16.02-10.el7.x86_64.rpm
-
-cp -f "etc/resolv.conf" "/etc/resolv.conf"
 echo "========== Install Docker =========="
-yum install -y yum-utils
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum install -y docker-ce docker-ce-cli containerd.io
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+apt install -y docker-ce docker-ce-cli containerd.io
 
 echo "========== Install Docker Compose =========="
 curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -28,32 +27,24 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 systemctl start docker
 systemctl enable docker
 
-# echo "========== download old certificates =========="
-# wget http://mashkov.com/wp-content/uploads/2021/02/vpn-host_ssl_20210203.7z
-# 7z x vpn-host_ssl_20210203.7z
-# chmod -R 0644 openconnect/
-
-# no | cp -fr $(pwd)/openconnect/* $(pwd)
-
-# rm -fr openconnect
-
 wget -c https://mashkov.com/soft/anyconnect-macos-4.9.06037-predeploy-k9.7z -P nginx/www/vpn-host/www/soft/ && \
 wget -c https://mashkov.com/soft/anyconnect-linux64-4.9.06037-webdeploy-k9.7z -P nginx/www/vpn-host/www/soft/ && \
 wget -c https://mashkov.com/soft/anyconnect-win-4.9.06037-core-vpn-predeploy-k9.7z  -P nginx/www/vpn-host/www/soft/ 
 
-
 echo "========== Install public keys =========="
 mkdir -p -m 0644 /root/.ssh/
 wget https://github.com/vladimirmashkov.keys -O "/root/.ssh/mashkov_key.pub"
+wget https://github.com/dev-vladimirmashkov.keys -O "/root/.ssh/vmashkov_key.pub"
 cat /root/.ssh/mashkov_key.pub > /root/.ssh/authorized_keys
+cat /root/.ssh/vmashkov_key.pub >> /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/authorized_keys
 
 groupadd vpn_admin
 
 chmod 0640 /etc/sudoers 
-echo "%wheel  ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
+echo "%sudo  ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers 
 chmod 0440 /etc/sudoers 
-useradd -m vmashkov -G wheel 
+useradd -m vmashkov -G root 
 usermod -aG wheel vmashkov 
 usermod -aG root vmashkov
 usermod -aG docker vmashkov 
@@ -64,7 +55,7 @@ touch /home/vmashkov/.ssh/authorized_keys
 cat /root/.ssh/authorized_keys > /home/vmashkov/.ssh/authorized_keys
 chmod 600 /home/vmashkov/.ssh/authorized_keys
 chown vmashkov:vmashkov /home/vmashkov/.ssh/ -R
-echo "vmashkov" | passwd vmashkov --stdin
+echo "vmashkov:vmashkov" | chpasswd
 
 useradd -m albert -G vpn_admin
 usermod -aG docker albert
@@ -74,10 +65,10 @@ touch /home/albert/.ssh/authorized_keys
 cat etc/albert_key.pub > /home/albert/.ssh/authorized_keys
 chmod 600 /home/albert/.ssh/authorized_keys
 chown albert:albert /home/albert/.ssh/ -R
-echo "albert" | passwd albert --stdin
+echo "albert:albert" | chpasswd
 
 sed -i "s/PasswordAuthentication yes/#PasswordAuthentication yes/g" /etc/ssh/sshd_config
 cat etc/sshd_config >> /etc/ssh/sshd_config
 systemctl restart sshd
+apt upgrade -y && apt update -y 
 
-yum update -y && yum upgrade -y
