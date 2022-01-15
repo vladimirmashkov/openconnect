@@ -9,7 +9,7 @@ reboot
 echo
 ```
 ```bash
-yum install -y git
+apt install -y git
 git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
 git checkout origin/dev/debian/main
