@@ -52,16 +52,29 @@ usermod -aG vpn_admin vmashkov
 mkdir -p -m 0644 /home/vmashkov/.ssh/
 chmod 700 /home/vmashkov/.ssh/
 touch /home/vmashkov/.ssh/authorized_keys
+touch /home/vmashkov/.Xauthority
 cat /root/.ssh/authorized_keys > /home/vmashkov/.ssh/authorized_keys
 chmod 600 /home/vmashkov/.ssh/authorized_keys
 chown vmashkov:vmashkov /home/vmashkov/.ssh/ -R
 echo "vmashkov:vmashkov" | chpasswd
+
+useradd -m ocserv -G vpn_admin
+usermod -aG docker ocserv
+mkdir -p -m 0644 /home/ocserv/.ssh/
+chmod 700 /home/ocserv/.ssh/
+touch /home/ocserv/.ssh/authorized_keys
+touch /home/ocserv/.Xauthority
+cat /root/.ssh/authorized_keys > /home/ocserv/.ssh/authorized_keys
+chmod 600 /home/albert/.ssh/authorized_keys
+chown ocserv:ocserv /home/ocserv/.ssh/ -R
+echo "ocserv:ocserv" | chpasswd
 
 useradd -m albert -G vpn_admin
 usermod -aG docker albert
 mkdir -p -m 0644 /home/albert/.ssh/
 chmod 700 /home/albert/.ssh/
 touch /home/albert/.ssh/authorized_keys
+touch /home/albert/.Xauthority
 cat etc/albert_key.pub > /home/albert/.ssh/authorized_keys
 chmod 600 /home/albert/.ssh/authorized_keys
 chown albert:albert /home/albert/.ssh/ -R
@@ -71,4 +84,8 @@ sed -i "s/PasswordAuthentication yes/#PasswordAuthentication yes/g" /etc/ssh/ssh
 cat etc/sshd_config >> /etc/ssh/sshd_config
 systemctl restart sshd
 apt upgrade -y && apt update -y 
+
+cd ..
+mv openconnect /home/ocserv/
+reboot
 
