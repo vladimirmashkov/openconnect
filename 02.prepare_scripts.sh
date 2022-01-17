@@ -2,7 +2,7 @@
 declare -a arr=(
     "cert_get_new.sh"
     "cert_renew.sh"
-    "docker-compose.yml"
+    "docker-compose.yaml"
     "test.sh"
     "./nginx/conf.d/vpn-host.conf"
     "05.cp_and_clean-up.sh"
