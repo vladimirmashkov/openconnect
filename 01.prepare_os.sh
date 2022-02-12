@@ -6,7 +6,7 @@ yum install -y --enablerepo=epel ntp ntpdate wget mc whois net-tools traceroute 
 yum -y install --enablerepo=epel iptables-services wget perl unzip net-tools perl-libwww-perl perl-LWP-Protocol-https perl-GDGraph
 ntpdate -s time.nist.gov
 
-chmod 0777 openconnect/cert*.sh
+chmod 0777 openconnect/*.sh
 
 echo "========== Install 7zip =========="
 #wget https://www.mirrorservice.org/sites/dl.fedoraproject.org/pub/epel/7/x86_64/Packages/p/p7zip-16.02-10.el7.x86_64.rpm
