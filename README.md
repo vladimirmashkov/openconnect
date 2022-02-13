@@ -3,6 +3,10 @@
 docker-compose down
 rm -f docker-compose.yaml
 hostnamectl set-hostname the_domain
+echo
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+echo "nameserver 8.8.4.4" >> /etc/resolv.conf
+echo
 ```
 
 ```bash
