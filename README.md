@@ -1,4 +1,8 @@
 # openconnect
+```bash
+docker-compose down
+rm -f docker-compose.yaml
+```
 
 ```bash
 sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config
