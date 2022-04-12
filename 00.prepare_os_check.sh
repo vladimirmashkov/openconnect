@@ -33,6 +33,9 @@ echo "  nginx:" >> docker-compose.yaml
 echo "    image: nginx:latest" >> docker-compose.yaml
 echo "    restart: always" >> docker-compose.yaml
 echo "    container_name: nginx" >> docker-compose.yaml
+echo "        ports:" >> docker-compose.yaml
+echo '          - "80:80"' >> docker-compose.yaml
+echo '          - "443:443"' >> docker-compose.yaml
 
 docker-compose up -d
 
