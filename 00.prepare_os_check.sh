@@ -1,4 +1,8 @@
 ###!/bin/bash
+echo "nameserver 8.8.8.8" >  /ect/resolv.conf
+echo "nameserver 8.8.4.4" >> /ect/resolv.conf
+
+
 yum update -y && yum upgrade -y
 yum install -y epel-release && \
 timedatectl set-timezone Europe/Moscow
