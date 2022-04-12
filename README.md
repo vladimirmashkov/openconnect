@@ -55,3 +55,9 @@ docker exec -it ocserv ocpasswd -c /etc/ocserv/passwd -g default my_login_name
 
 sh test.sh
 ```
+
+```bash
+curl -O https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/nginx_auto/00.prepare_os_check.sh
+chmod 0777 00.prepare_os_check.sh
+./00.prepare_os_check.sh
+```
