@@ -2,6 +2,7 @@
 ```bash
 docker-compose down
 rm -f docker-compose.yaml
+rm -f vladimir_key.pub
 hostnamectl set-hostname the_domain
 
 echo
