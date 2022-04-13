@@ -71,7 +71,7 @@ with ssh_key
 curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/nginx_auto/etc/vladimir_key.pub"
 curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/nginx_auto/00.prepare_os_check_ssh.sh"
 chmod 0777 00.prepare_os_check_ssh.sh
-./00.prepare_os_check.sh
+./00.prepare_os_check_ssh.sh
 
 echo
 
