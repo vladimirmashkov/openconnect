@@ -1,7 +1,8 @@
 #!/bin/bash
 cd /root/openconnect
 /usr/bin/chmod 0755 /root/openconnect/*.sh
-/usr/bin/chmod 0777 /root/openconnect/etc/ocserv/passwd.txt
+/usr/bin/touch /root/openconnect/ocserv/passwd.txt
+/usr/bin/chmod 0777 /root/openconnect/ocserv/passwd.txt
 /usr/bin/read -t 3
 
 /usr/bin/systemctl stop docker.sock

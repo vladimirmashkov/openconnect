@@ -1,7 +1,8 @@
 #!/bin/bash
 cd /root/openconnect
 /usr/bin/chmod 0755 /root/openconnect/*.sh
-/usr/bin/chmod 0777 /root/openconnect/etc/ocserv/passwd.txt
+/usr/bin/touch /root/openconnect/ocserv/passwd.txt
+/usr/bin/chmod 0777 /root/openconnect/ocserv/passwd.txt
 /usr/bin/read -t 3
 
 docker-compose down
@@ -35,11 +36,6 @@ docker-compose down
 
 rm -f /root/openconnect/docker-compose.yaml
 yes | cp /root/openconnect/docker-compose.yaml.bak.ocs /root/openconnect/docker-compose.yaml
-/usr/bin/read -t 3
-
-docker-compose up -d
-/usr/bin/read -t 3
-#########################################################
 
 yes | cp /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/cert.pem  /root/openconnect/ocserv/certs/cert.pem
 
@@ -48,3 +44,9 @@ yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/chain.
 yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/fullchain.pem  /root/openconnect/ocserv/certs/fullchain.pem
 
 yes | cp  /root/openconnect/nginx/www/vpn-host/ssl/live/<vpn_domain_name>/privkey.pem  /root/openconnect/ocserv/certs/privkey.pem
+#########################################################
+
+/usr/bin/read -t 3
+
+docker-compose up -d
+/usr/bin/read -t 3
