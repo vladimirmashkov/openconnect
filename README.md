@@ -1,25 +1,36 @@
 # openconnect
 ```bash
+sudo su
+read -t 1
+
+cd /root
+read -t 1
+
 docker-compose down
 rm -f docker-compose.yaml
 rm -f vladimir_key.pub
 hostnamectl set-hostname the_domain
 
-echo
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
-echo "nameserver 8.8.4.4" >> /etc/resolv.conf
-echo
-```
-
-```bash
 sed -i "s/SELINUX=permissive/SELINUX=disabled/g" /etc/selinux/config
 path_vpn_domain_name=/etc/profile.d/vpn_domain_name.sh
 echo "export vpn_domain_name=the_domain" > $path_vpn_domain_name
 echo "export PATH="/var/openconnect_admin:$PATH"" >> $path_vpn_domain_name
 reboot
 echo
+
 ```
 ```bash
+sudo su
+read -t 1
+
+cd /root
+read -t 1
+
+echo
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+echo "nameserver 8.8.4.4" >> /etc/resolv.conf
+echo
+
 yum install -y git
 git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
