@@ -23,8 +23,8 @@ echo
 yum install -y git
 git clone https://github.com/vladimirmashkov/openconnect.git
 cd openconnect/
-git checkout origin/dev/nginx_auto
-git checkout dev/nginx_auto
+git checkout origin/dev/auto
+git checkout dev/auto
 sh main.sh
 sh cert_get_new.sh
 echo
@@ -58,7 +58,7 @@ sh test.sh
 ```
 
 ```bash
-curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/nginx_auto/00.prepare_os_check.sh"
+curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/00.prepare_os_check.sh"
 chmod 0777 00.prepare_os_check.sh
 ./00.prepare_os_check.sh
 
@@ -68,8 +68,8 @@ echo
 
 with ssh_key
 ```bash
-curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/nginx_auto/etc/vladimir_key.pub"
-curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/nginx_auto/00.prepare_os_check_ssh.sh"
+curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/etc/vladimir_key.pub"
+curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/00.prepare_os_check_ssh.sh"
 chmod 0777 00.prepare_os_check_ssh.sh
 ./00.prepare_os_check_ssh.sh
 
