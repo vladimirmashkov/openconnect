@@ -69,7 +69,7 @@ sh test.sh
 ```
 
 ```bash
-curl -o "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/00.prepare_os_check.sh"
+curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/00.prepare_os_check.sh"
 chmod 0777 00.prepare_os_check.sh
 ./00.prepare_os_check.sh
 
@@ -79,8 +79,8 @@ echo
 
 with ssh_key
 ```bash
-curl -o "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/etc/vladimir_key.pub"
-curl -o "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/00.prepare_os_check_ssh.sh"
+curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/etc/vladimir_key.pub"
+curl -O "https://raw.githubusercontent.com/vladimirmashkov/openconnect/dev/auto/00.prepare_os_check_ssh.sh"
 chmod 0777 00.prepare_os_check_ssh.sh
 ./00.prepare_os_check_ssh.sh
 
